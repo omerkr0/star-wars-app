@@ -2,6 +2,11 @@
 
 In this project, I developed a Starships app using React.
 
+## Live
+
+[You can find the live version](https://star-wars-starships-app.netlify.app/)
+
+
 ## Used technologies
 
 - React.js
