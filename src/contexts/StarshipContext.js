@@ -36,14 +36,14 @@ const StarshipContextProvider = (props) => {
 
   // handleLoadMore, bir sonraki sayfadaki starship verilerini getirir
   const handleLoadMore = async () => {
-  if (nextPageUrl) { // nextPageUrl tanımlanmış mı kontrol ediliyor
-    const data = await loadMoreStarships(nextPageUrl)
-    const newStarships = data.results.slice(0, 8)
-    setStarships((prevStarships) => [...prevStarships, ...newStarships])
-    setNextPageUrl(data.next)
+    if (nextPageUrl) {
+      // nextPageUrl tanımlanmış mı kontrol ediliyor
+      const data = await loadMoreStarships(nextPageUrl)
+      const newStarships = data.results.slice(0, 8)
+      setStarships((prevStarships) => [...prevStarships, ...newStarships])
+      setNextPageUrl(data.next)
+    }
   }
-}
-
 
   // handleSelect, verilen id'ye göre starship verisini döndürür
   const handleSelect = (id) => {
