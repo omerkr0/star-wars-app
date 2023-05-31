@@ -41,7 +41,11 @@ npm  start
 -   Read details of a specific starship
 -   Load more starships with a load more button
 
+### Starships List
+
 ![screencapture-localhost-3000-2023-04-29-04_43_37](https://user-images.githubusercontent.com/90520911/235278296-f9eaaa96-a72f-409a-b377-429cacfe50ec.png)
+
+### Starships Detail
 
 ![screencapture-localhost-3000-starships-12-2023-04-29-04_47_25](https://user-images.githubusercontent.com/90520911/235278304-e72bbae2-b60b-4bfd-a4c6-23f9eb4df14d.png)
 
