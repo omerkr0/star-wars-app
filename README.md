@@ -1,6 +1,6 @@
 # Star wars Starships app
 
-In this project, I developed a Starships app using React.
+In this project, I developed a Star Wars starships app using React.
 
 ## Live
 
