@@ -19,6 +19,8 @@ In this project, I developed a Star Wars starships app using React.
 
 - React-Bootstrap
 
+- Framer-motion
+
 ## Setup
 
 Install the required packages:
