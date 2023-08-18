@@ -7,7 +7,7 @@ function StarshipSearch() {
 
   // Search kutusu render ediliyor
   return (
-    <div className="search-box my-3">
+    <div className="search-box mb-3">
       <Form>
         <Form.Label>Search</Form.Label>
         <Form.Control

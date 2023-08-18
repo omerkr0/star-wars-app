@@ -5,7 +5,7 @@ function StarWarsLogo() {
     <img
       src={logo}
       alt="Star Wars Logo"
-      className="my-4 mx-auto d-block star-wars-logo"
+      className="my-2 mx-auto d-block star-wars-logo"
       style={{ maxWidth: '100%', height: 'auto' }}
     />
   )
