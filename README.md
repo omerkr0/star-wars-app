@@ -1,4 +1,4 @@
-# Star wars Starships app
+# Star wars starships app
 
 In this project, I developed a Star Wars starships app using React.
 
