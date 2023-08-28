@@ -45,11 +45,10 @@ npm  start
 
 ### Starships List
 
-![screencapture-localhost-3000-2023-04-29-04_43_37](https://user-images.githubusercontent.com/90520911/235278296-f9eaaa96-a72f-409a-b377-429cacfe50ec.png)
+![screencapture-star-wars-starships-app-netlify-app-2023-08-28-01_27_31](https://github.com/omerkr0/star-wars-app/assets/90520911/54e8fafd-a330-48fb-b9c5-ba1e0871db63)
+
 
 ### Starships Detail
 
-![screencapture-localhost-3000-starships-12-2023-04-29-04_47_25](https://user-images.githubusercontent.com/90520911/235278304-e72bbae2-b60b-4bfd-a4c6-23f9eb4df14d.png)
-
-
+![screencapture-star-wars-starships-app-netlify-app-starships-10-2023-08-28-01_28_24](https://github.com/omerkr0/star-wars-app/assets/90520911/c0b69b31-59b5-4174-a3ea-90a431b82cf1)
 
