@@ -3,9 +3,14 @@ import { StarshipContext } from '../contexts/StarshipContext'
 import { Button, Col } from 'react-bootstrap'
 
 function LoadMore() {
-  const { handleLoadMore } = useContext(StarshipContext)
+  const { handleLoadMore, hasMore } = useContext(StarshipContext)
 
   // "Load More" butonuna tıklanınca handleLoadMore fonksiyonunu çağırır.
+  // Sadece daha fazla veri varsa butonu gösterir.
+
+  if (!hasMore) {
+    return null // Daha fazla veri yoksa butonu gösterme
+  }
 
   return (
     <Col xs={12} className="d-flex justify-content-center my-3">

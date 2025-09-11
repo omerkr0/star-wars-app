@@ -17,7 +17,7 @@ function StarshipDetail() {
 
   // id'ye göre doğru starship bulunur
   const starship = starships.find((starship) =>
-    starship.url.endsWith(`/${id}/`),
+    starship.url.endsWith(`/${id}`),
   )
 
   // starship resmi images.json dosyasından alınır
