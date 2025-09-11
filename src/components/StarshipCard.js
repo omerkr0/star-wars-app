@@ -56,7 +56,7 @@ function StarshipCard(props) {
                 Hyperdrive rating: {starship.hyperdrive_rating}
               </Card.Text>
               {/* Starship detay sayfasına gitmek için link */}
-              <Link to={`/starships/${starship.url.split('/')[5]}`}>
+              <Link to={`/starships/${starship.url.split('/').pop()}`}>
                 <Button variant="light" onClick={() => handleSelect(starship)}>
                   Details
                 </Button>

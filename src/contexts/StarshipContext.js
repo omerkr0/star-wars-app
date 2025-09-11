@@ -9,14 +9,16 @@ const StarshipContextProvider = (props) => {
   // state'ler oluşturuluyor
   const [starships, setStarships] = useState([]) // tüm starship verileri
   const [searchTerm, setSearchTerm] = useState('') // arama sorgusu
-  const [nextPageUrl, setNextPageUrl] = useState('') // bir sonraki sayfa URL'si
+  const [currentPage, setCurrentPage] = useState(1) // mevcut sayfa numarası
+  const [hasMore, setHasMore] = useState(true) // daha fazla veri var mı
 
   // useEffect kullanarak, sayfa yüklendiğinde getStarshipsByPage fonksiyonu çağrılıyor
   useEffect(() => {
     const getStarships = async () => {
       const data = await getStarshipsByPage(1) // ilk sayfayı getirir
-      setStarships(data.results.slice(0, 8)) // ilk sayfadan 8 gemi verisini alır
-      setNextPageUrl(data.next) // bir sonraki sayfanın URL'sini set eder
+      setStarships(data.results) // ilk sayfadan gemi verilerini alır
+      setCurrentPage(1) // sayfa numarasını 1 olarak set eder
+      setHasMore(data.next !== null) // daha fazla veri var mı kontrol eder
     }
     getStarships() // fonksiyonu çağırır
   }, [])
@@ -36,18 +38,18 @@ const StarshipContextProvider = (props) => {
 
   // handleLoadMore, bir sonraki sayfadaki starship verilerini getirir
   const handleLoadMore = async () => {
-    if (nextPageUrl) {
-      // nextPageUrl tanımlanmış mı kontrol ediliyor
-      const data = await loadMoreStarships(nextPageUrl)
-      const newStarships = data.results.slice(0, 8)
-      setStarships((prevStarships) => [...prevStarships, ...newStarships])
-      setNextPageUrl(data.next)
+    if (hasMore) {
+      // daha fazla veri var mı kontrol ediliyor
+      const data = await loadMoreStarships(currentPage)
+      setStarships((prevStarships) => [...prevStarships, ...data.results])
+      setCurrentPage(prevPage => prevPage + 1)
+      setHasMore(data.next !== null)
     }
   }
 
   // handleSelect, verilen id'ye göre starship verisini döndürür
   const handleSelect = (id) => {
-    return starships.find((starship) => starship.url.endsWith(`/${id}/`))
+    return starships.find((starship) => starship.url.endsWith(`/${id}`))
   }
 
   // starshipContextValue, starship verilerini ve arama özelliklerini içeren bir objedir
@@ -55,6 +57,8 @@ const StarshipContextProvider = (props) => {
     starships,
     filteredStarships,
     searchTerm,
+    currentPage,
+    hasMore,
     handleSearch,
     handleLoadMore,
     handleSelect,
